@@ -1,0 +1,5 @@
+resource_group_name = "Sharp-Key-Vault-Resource-Group"
+location            = "CentralUS"
+key_vault_name      = "kv-sharp-demo001"
+secret_name         = "SecretValue"
+secret_value        = "<secret_value>"

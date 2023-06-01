@@ -3,3 +3,7 @@ location            = "CentralUS"
 key_vault_name      = "kv-sharp-demo01"
 secret_name         = "SecretValue"
 secret_value        = "<secret_value>"
+
+tags = {
+  BusinessUnit = "TBD"
+}

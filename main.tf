@@ -29,13 +29,3 @@ resource "azurerm_role_assignment" "kv_current_user" {
   role_definition_name = data.azurerm_role_definition.kv_admin.name
   principal_id         = data.azuread_user.joe.object_id
 }
-
-
-resource "azurerm_key_vault_secret" "secret" {
-  name         = var.secret_name
-  value        = random_password.pwd.result
-  key_vault_id = azurerm_key_vault.kv.id
-  depends_on = [
-    azurerm_role_assignment.tfc_app_reg
-  ]
-}

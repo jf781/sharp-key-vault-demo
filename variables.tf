@@ -13,11 +13,6 @@ variable "key_vault_name" {
   type        = string
 }
 
-variable "azure_tenant_id" {
-  description = "The tenant id for the Azure subscription"
-  type        = string
-}
-
 variable "secret_name" {
   description = "The name of the secret to be stored in the key vault"
   type        = string

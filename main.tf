@@ -35,6 +35,6 @@ resource "azurerm_key_vault_secret" "secret" {
   value        = random_password.pwd.result
   key_vault_id = azurerm_key_vault.kv.id
   depends_on = [
-    azurerm_key_vault.kv
+    azurerm_role_assignment.tfc_app_reg
   ]
 }

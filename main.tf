@@ -17,11 +17,18 @@ resource "azurerm_key_vault" "kv" {
   purge_protection_enabled = true
 }
 
-resource "azurerm_role_assignment" "kv_admin" {
+resource "azurerm_role_assignment" "tfc_app_reg" {
   scope                = azurerm_key_vault.kv.id
   role_definition_name = data.azurerm_role_definition.kv_admin.name
   principal_id         = data.azurerm_client_config.current.object_id
 }
+
+resource "azurerm_role_assignment" "kv_current_user" {
+  scope                = azurerm_key_vault.kv.id
+  role_definition_name = data.azurerm_role_definition.kv_admin.name
+  principal_id         = data.azuread_user.joe.object_id
+}
+
 
 resource "azurerm_key_vault_secret" "secret" {
   name         = var.secret_name

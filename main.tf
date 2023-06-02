@@ -3,10 +3,10 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 }
 
-resource "random_password" "pwd" {
-  length  = 16
-  special = true
-}
+#resource "random_password" "pwd" {
+#  length  = 16
+#  special = true
+#}
 
 resource "azurerm_key_vault" "kv" {
   name                     = var.key_vault_name
